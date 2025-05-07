@@ -17,7 +17,7 @@ Supports adding, updating, deleting, and marking tasks with statuses like **todo
 1. **Clone this repo or copy the code into a directory:**
 
    ```bash
-   git clone https://github.com/yourusername/taskcli.git
+   git clone https://github.com/dovjay/roadmap.sh-task-tracker-cli
    cd taskcli
    ```
 
