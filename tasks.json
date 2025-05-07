@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "new task here",
+    "status": "todo",
+    "createdAt": "2025-05-06T16:31:56.4020628+07:00",
+    "updatedAt": "2025-05-06T16:31:56.4020628+07:00"
+  },
+  {
+    "id": 2,
+    "title": "second task",
+    "status": "in-progress",
+    "createdAt": "2025-05-06T16:33:06.943347+07:00",
+    "updatedAt": "2025-05-06T16:34:08.9641662+07:00"
+  },
+  {
+    "id": 3,
+    "title": "last task thats already done",
+    "status": "done",
+    "createdAt": "2025-05-06T16:33:17.5994858+07:00",
+    "updatedAt": "2025-05-06T16:34:03.1923+07:00"
+  }
+]
