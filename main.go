@@ -102,6 +102,23 @@ func main() {
 		saveTasks(tasks)
 		fmt.Println("Task status updated")
 
+	case "update":
+		if len(args) < 2 {
+			fmt.Println("Usage: update <id> <new title>")
+			return
+		}
+		id, _ := strconv.Atoi(args[0])
+		title := strings.Join(args[1:], " ")
+		for i, t := range tasks {
+			if t.ID == id {
+				tasks[i].Title = title
+				tasks[i].UpdatedAt = time.Now()
+				break
+			}
+		}
+		saveTasks(tasks)
+		fmt.Println("Task updated")
+
 	default:
 		fmt.Println("Unknown command")
 	}
