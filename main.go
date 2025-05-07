@@ -119,6 +119,21 @@ func main() {
 		saveTasks(tasks)
 		fmt.Println("Task updated")
 
+	case "delete":
+		if len(args) < 1 {
+			fmt.Println("Usage: delete <id>")
+			return
+		}
+		id, _ := strconv.Atoi(args[0])
+		newTasks := []Task{}
+		for _, t := range tasks {
+			if t.ID != id {
+				newTasks = append(newTasks, t)
+			}
+		}
+		saveTasks(newTasks)
+		fmt.Println("Task deleted")
+
 	default:
 		fmt.Println("Unknown command")
 	}
