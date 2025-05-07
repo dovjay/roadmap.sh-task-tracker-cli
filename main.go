@@ -67,6 +67,23 @@ func main() {
 		saveTasks(tasks)
 		fmt.Println("Task added:", title)
 
+	case "list":
+		if len(args) == 0 {
+			fmt.Println("All tasks:")
+			for _, t := range tasks {
+				fmt.Printf("[%d] %s (%s)\n  Created: %s\n  Updated: %s\n", t.ID, t.Title, t.Status, t.CreatedAt.Format(time.RFC3339), t.UpdatedAt.Format(time.RFC3339))
+			}
+		} else if args[0] == "done" || args[0] == "in-progress" || args[0] == "todo" {
+			fmt.Println("Filtered tasks:")
+			for _, t := range tasks {
+				if t.Status == args[0] {
+					fmt.Printf("[%d] %s (%s)\n", t.ID, t.Title, t.Status)
+				}
+			}
+		} else {
+			fmt.Println("Invalid filter. Use: done, in-progress, or todo")
+		}
+
 	default:
 		fmt.Println("Unknown command")
 	}
