@@ -108,3 +108,4 @@ Supports adding, updating, deleting, and marking tasks with statuses like **todo
 - Tasks are saved in `tasks.json` in the current directory.
 - You can safely edit or copy the JSON file if needed.
 - All timestamps are stored in RFC3339 format.
+- This is a project submition for https://roadmap.sh/projects/task-tracker
