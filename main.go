@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -83,6 +84,23 @@ func main() {
 		} else {
 			fmt.Println("Invalid filter. Use: done, in-progress, or todo")
 		}
+
+	case "mark":
+		if len(args) < 2 {
+			fmt.Println("Usage: mark <id> <todo|in-progress|done>")
+			return
+		}
+		id, _ := strconv.Atoi(args[0])
+		status := args[1]
+		for i, t := range tasks {
+			if t.ID == id {
+				tasks[i].Status = status
+				tasks[i].UpdatedAt = time.Now()
+				break
+			}
+		}
+		saveTasks(tasks)
+		fmt.Println("Task status updated")
 
 	default:
 		fmt.Println("Unknown command")
